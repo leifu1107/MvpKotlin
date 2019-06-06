@@ -10,7 +10,7 @@ object ErrorStatus {
      * 响应成功
      */
     @JvmField
-    val SUCCESS = 0
+    val SUCCESS = 200
 
     /**
      * 未知错误
@@ -22,13 +22,13 @@ object ErrorStatus {
      * 服务器内部错误
      */
     @JvmField
-    val SERVER_ERROR = 1003
+    val SERVER_ERROR = 500
 
     /**
      * 网络连接超时
      */
     @JvmField
-    val NETWORK_ERROR = 1004
+    val NETWORK_ERROR = 403
 
     /**
      * API解析异常（或者第三方数据结构更改）等其他异常

@@ -19,5 +19,7 @@ abstract class CommonSubscriber<T> : ResourceSubscriber<T>() {
 
     override fun onComplete() {}
 
-    override fun onError(e: Throwable) {}
+    override fun onError(e: Throwable) {
+        ExceptionHandle.handleException(e)
+    }
 }

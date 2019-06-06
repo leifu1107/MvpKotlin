@@ -39,8 +39,8 @@ object RxUtil {
         return FlowableTransformer { httpResponseFlowable ->
             httpResponseFlowable.flatMap(Function<T, Flowable<T>> { bean ->
                 val baseBean = bean as BaseBean
-                if (baseBean.code == 0) {
-                    createData(bean)
+                if (baseBean.code == 1) {
+                    createFlowable(bean)
                 } else {
                     Flowable.error(ApiException(baseBean.msg))
                 }
@@ -55,7 +55,7 @@ object RxUtil {
      * @param <T>
      * @return
     </T> */
-    fun <T> createData(t: T): Flowable<T> {
+    private fun <T> createFlowable(t: T): Flowable<T> {
         return Flowable.create({ emitter ->
             try {
                 emitter.onNext(t)
