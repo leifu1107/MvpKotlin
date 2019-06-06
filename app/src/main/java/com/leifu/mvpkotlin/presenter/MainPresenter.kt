@@ -21,7 +21,7 @@ class MainPresenter : BaseRxPresenter<MainContract.View>(), MainContract.Present
         addSubscription(
             RetrofitManager.apiService.getFirstHomeData()
                 .compose(RxUtil.rxSchedulerHelper<BaseBean>())
-                .compose(RxUtil.handleResult1<BaseBean>())
+                .compose(RxUtil.handleResult<BaseBean>())
                 .subscribeWith(object : CommonSubscriber<BaseBean>() {
                     override fun onNext(t: BaseBean?) {
                     }

@@ -35,7 +35,7 @@ object RxUtil {
      * @param <T>
      * @return
     </T> */
-    fun <T> handleResult1(): FlowableTransformer<T, T> {   //compose判断结果
+    fun <T> handleResult(): FlowableTransformer<T, T> {   //compose判断结果
         return FlowableTransformer { httpResponseFlowable ->
             httpResponseFlowable.flatMap(Function<T, Flowable<T>> { bean ->
                 val baseBean = bean as BaseBean
