@@ -1,5 +1,6 @@
 package com.leifu.mvpkotlin.net
 
+import android.util.Log
 import com.leifu.mvpkotlin.MyApp
 import com.leifu.mvpkotlin.net.api.ApiService
 import com.leifu.mvpkotlin.net.api.UrlConstant
@@ -34,7 +35,8 @@ object RetrofitManager {
 
     private fun getOkHttpClient(): OkHttpClient {
         //添加一个log拦截器,打印所有的log
-        val httpLoggingInterceptor = HttpLoggingInterceptor()
+        val httpLoggingInterceptor =
+            HttpLoggingInterceptor(HttpLoggingInterceptor.Logger { message: String? -> Log.e("okhttp", message) })
         //可以设置请求过滤的水平,body,basic,headers
         httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
@@ -46,8 +48,8 @@ object RetrofitManager {
 //            .addInterceptor(addQueryParameterInterceptor())  //参数添加
 //            .addInterceptor(addHeaderInterceptor()) // token过滤
             .addInterceptor(httpLoggingInterceptor) //日志,所有的请求响应度看到
-            .addNetworkInterceptor(addCacheInterceptor())// 添加缓存
-            .addInterceptor(addCacheInterceptor())// 添加缓存
+//            .addNetworkInterceptor(addCacheInterceptor())// 添加缓存
+//            .addInterceptor(addCacheInterceptor())// 添加缓存
             .cache(cache)  //添加缓存
             .connectTimeout(60L, TimeUnit.SECONDS)
             .readTimeout(60L, TimeUnit.SECONDS)

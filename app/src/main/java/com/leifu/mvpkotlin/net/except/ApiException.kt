@@ -6,5 +6,12 @@ package com.leifu.mvpkotlin.net.except
  *描述:
  */
 class ApiException : Exception {
-    constructor(code: Int, message: String) : super(Throwable(message))
+    private var code: Int? = null
+
+
+    constructor(throwable: Throwable, code: Int) : super(throwable) {
+        this.code = code
+    }
+
+    constructor(message: String) : super(Throwable(message))
 }

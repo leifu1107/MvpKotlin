@@ -27,36 +27,29 @@ class MyApp : Application() {
     }
 
     private fun initConfig() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     private val mActivityLifecycleCallbacks = object : ActivityLifecycleCallbacks {
         override fun onActivityPaused(p0: Activity?) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
 
         override fun onActivityResumed(p0: Activity?) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
 
         override fun onActivityStarted(p0: Activity?) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
 
         override fun onActivityDestroyed(p0: Activity?) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
 
         override fun onActivitySaveInstanceState(p0: Activity?, p1: Bundle?) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
 
         override fun onActivityStopped(p0: Activity?) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
 
-        override fun onActivityCreated(p0: Activity, p1: Bundle) {
-            Log.d(TAG, "onCreated: " + p0.componentName.className)
+        override fun onActivityCreated(p0: Activity?, p1: Bundle?) {
+            Log.d(TAG, "onCreated: " + p0!!.componentName.className)
         }
 
     }

@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
-apply plugin: 'kotlin-kapt'  //kapt3插件
+//apply plugin: 'kotlin-kapt'  //kapt3插件
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
@@ -71,5 +71,5 @@ dependencies {
     implementation rootProject.ext.rxJavaLibs
 //    implementation rootProject.ext.otherLibs
     // APT dependencies(Kotlin内置的注解处理器)
-    kapt rootProject.ext.annotationProcessorLibs
+//    kapt rootProject.ext.annotationProcessorLibs
 }

@@ -9,10 +9,18 @@ import android.support.v7.app.AppCompatActivity
  *描述:
  */
 abstract class BaseActivity : AppCompatActivity() {
+//    var mContext: Context by Delegates.notNull()
+//    var mActivity: AppCompatActivity by Delegates.notNull()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        mContext = this.applicationContext
+//        mActivity = this
         setContentView(getLayoutId())
+        initView(savedInstanceState)
         initData()
+    }
+
+    open fun initView(savedInstanceState: Bundle?) {
     }
 
 
