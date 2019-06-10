@@ -4,7 +4,7 @@ import android.util.Log
 import com.leifu.mvpkotlin.base.BaseRxPresenter
 import com.leifu.mvpkotlin.net.BaseBean
 import com.leifu.mvpkotlin.net.RetrofitManager
-import com.leifu.mvpkotlin.net.RxUtil
+import com.leifu.mvpkotlin.net.RxManage
 import com.leifu.mvpkotlin.net.except.ExceptionHandle
 import com.leifu.mvpkotlin.presenter.contract.MainContract
 
@@ -21,8 +21,8 @@ class MainPresenter : BaseRxPresenter<MainContract.View>(), MainContract.Present
         mView?.showLoading()
         addSubscription(
             RetrofitManager.apiService.getFirstHomeData()
-                .compose(RxUtil.rxSchedulerObservableHelper())
-                .compose(RxUtil.handleObservableResult<BaseBean>())
+                .compose(RxManage.rxSchedulerObservableHelper())
+                .compose(RxManage.handleObservableResult<BaseBean>())
                 .subscribe({
                     run { ->
                         mView?.showCategory(it)

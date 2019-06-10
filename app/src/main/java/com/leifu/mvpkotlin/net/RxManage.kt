@@ -16,7 +16,7 @@ import io.reactivex.schedulers.Schedulers
  *由于基于Flowable发射的数据流，以及对数据加工处理的各操作符都添加了背压支持，附加了额外的逻辑，其运行效率要比Observable慢得多。
  *只有在需要处理背压问题时，才需要使用Flowable。
  */
-object RxUtil {
+object RxManage {
     /**
      * compose简化线程切换
      * @param <T>

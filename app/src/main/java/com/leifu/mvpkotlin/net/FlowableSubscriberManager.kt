@@ -1,6 +1,7 @@
-package com.leifu.mvpkotlin.net.except
+package com.leifu.mvpkotlin.net
 
 
+import com.leifu.mvpkotlin.net.except.ExceptionHandle
 import io.reactivex.subscribers.ResourceSubscriber
 
 /**
@@ -9,9 +10,8 @@ import io.reactivex.subscribers.ResourceSubscriber
  * 描述:
  */
 
-abstract class CommonFlowableSubscriber<T> : ResourceSubscriber<T>() {
+abstract class FlowableSubscriberManager<T> : ResourceSubscriber<T>() {
 
-    //自己加的,防止出现问题,测试
     override fun onStart() {
         super.onStart()
     }
