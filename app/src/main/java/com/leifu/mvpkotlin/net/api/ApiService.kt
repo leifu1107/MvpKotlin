@@ -1,7 +1,7 @@
 package com.leifu.mvpkotlin.net.api
 
 import com.leifu.mvpkotlin.net.BaseBean
-import io.reactivex.Flowable
+import io.reactivex.Observable
 import retrofit2.http.GET
 
 /**
@@ -14,5 +14,5 @@ interface ApiService {
      * 首页精选
      */
     @GET("api/4/news/latest")
-    fun getFirstHomeData(): Flowable<BaseBean>
+    fun getFirstHomeData(): Observable<BaseBean>
 }

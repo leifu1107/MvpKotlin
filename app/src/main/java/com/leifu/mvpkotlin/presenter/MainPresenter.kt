@@ -5,7 +5,7 @@ import com.leifu.mvpkotlin.base.BaseRxPresenter
 import com.leifu.mvpkotlin.net.BaseBean
 import com.leifu.mvpkotlin.net.RetrofitManager
 import com.leifu.mvpkotlin.net.RxUtil
-import com.leifu.mvpkotlin.net.except.CommonSubscriber
+import com.leifu.mvpkotlin.net.except.ExceptionHandle
 import com.leifu.mvpkotlin.presenter.contract.MainContract
 
 /**
@@ -18,15 +18,20 @@ class MainPresenter : BaseRxPresenter<MainContract.View>(), MainContract.Present
 
     override fun getCategoryData() {
         Log.e("okhttp", "getCategoryData")
+        mView?.showLoading()
         addSubscription(
             RetrofitManager.apiService.getFirstHomeData()
-                .compose(RxUtil.rxSchedulerHelper())
-                .compose(RxUtil.handleResult<BaseBean>())
-                .subscribeWith(object : CommonSubscriber<BaseBean>() {
-                    override fun onNext(t: BaseBean?) {
+                .compose(RxUtil.rxSchedulerObservableHelper())
+                .compose(RxUtil.handleObservableResult<BaseBean>())
+                .subscribe({
+                    run { ->
+                        mView?.showCategory(it)
+                        mView?.dismissLoading()
                     }
-                })
+                },
+                    { t ->
+                        ExceptionHandle.handleException(t)
+                    })
         )
     }
-
 }

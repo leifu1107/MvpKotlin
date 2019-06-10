@@ -9,12 +9,11 @@ import io.reactivex.subscribers.ResourceSubscriber
  * 描述:
  */
 
-abstract class CommonSubscriber<T> : ResourceSubscriber<T>() {
+abstract class CommonFlowableSubscriber<T> : ResourceSubscriber<T>() {
 
     //自己加的,防止出现问题,测试
     override fun onStart() {
         super.onStart()
-
     }
 
     override fun onComplete() {}
