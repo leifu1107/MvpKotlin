@@ -18,7 +18,9 @@ object RxUtil {
 
     /**
      * 统一线程处理
-     *
+     *虽然在Rxjava2中，Flowable是在Observable的基础上优化后的产物，Observable能解决的问题Flowable也都能解决，但是并不代表Flowable可以完全取代Observable,在使用的过程中，并不能抛弃Observable而只用Flowable。
+    由于基于Flowable发射的数据流，以及对数据加工处理的各操作符都添加了背压支持，附加了额外的逻辑，其运行效率要比Observable慢得多。
+    只有在需要处理背压问题时，才需要使用Flowable。
      * @param <T>
      * @return
     </T> */

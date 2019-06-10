@@ -20,7 +20,7 @@ class MainPresenter : BaseRxPresenter<MainContract.View>(), MainContract.Present
         Log.e("okhttp", "getCategoryData")
         addSubscription(
             RetrofitManager.apiService.getFirstHomeData()
-                .compose(RxUtil.rxSchedulerHelper<BaseBean>())
+                .compose(RxUtil.rxSchedulerHelper())
                 .compose(RxUtil.handleResult<BaseBean>())
                 .subscribeWith(object : CommonSubscriber<BaseBean>() {
                     override fun onNext(t: BaseBean?) {

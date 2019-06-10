@@ -1,7 +1,10 @@
 package com.leifu.mvpkotlin.base
 
+import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.leifu.mvpkotlin.util.ActivityManager
 
 /**
  *创建人:雷富
@@ -9,20 +12,32 @@ import android.support.v7.app.AppCompatActivity
  *描述:
  */
 abstract class BaseActivity : AppCompatActivity() {
-//    var mContext: Context by Delegates.notNull()
-//    var mActivity: AppCompatActivity by Delegates.notNull()
+    lateinit var mContext: Context
+    lateinit var mActivity: Activity
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        mContext = this.applicationContext
-//        mActivity = this
+        mContext = this.applicationContext
+        mActivity = this
+        ActivityManager.instance.addActivity(this)
         setContentView(getLayoutId())
         initView(savedInstanceState)
         initData()
     }
 
-    open fun initView(savedInstanceState: Bundle?) {
+    /**
+     * 释放一些资源
+     */
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivityManager.instance.removeActivity(this)
     }
 
+    /**
+     *  initView
+     */
+    open fun initView(savedInstanceState: Bundle?) {
+    }
 
     /**
      *  加载布局

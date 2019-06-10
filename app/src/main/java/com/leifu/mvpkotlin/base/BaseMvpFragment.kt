@@ -1,19 +1,20 @@
 package com.leifu.mvpkotlin.base
 
 import android.os.Bundle
+import android.view.View
 
 /**
  *创建人:雷富
  *创建时间:2019/6/5 16:16
  *描述:
  */
-abstract class BaseMvpActivity<in V : IBaseView, P : IBasePresenter<V>> : BaseActivity(), IBaseView {
+abstract class BaseMvpFragment<in V : IBaseView, P : IBasePresenter<V>> : BaseFragment(), IBaseView {
 
     var mPresenter: P? = null
 
 
-    override fun initView(savedInstanceState: Bundle?) {
-        super.initView(savedInstanceState)
+    override fun initView(view: View?, savedInstanceState: Bundle?) {
+        super.initView(view, savedInstanceState)
         mPresenter = createPresenter()
         if (mPresenter != null) {
             mPresenter!!.attachView(this as V)
@@ -27,6 +28,7 @@ abstract class BaseMvpActivity<in V : IBaseView, P : IBasePresenter<V>> : BaseAc
         super.onDestroy()
         mPresenter?.detachView()
     }
+
 
     /**
      * 加载中

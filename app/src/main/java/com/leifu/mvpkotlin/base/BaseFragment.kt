@@ -1,6 +1,8 @@
 package com.leifu.mvpkotlin.base
 
+import android.app.Activity
 import android.app.Fragment
+import android.content.Context
 import android.os.Bundle
 import android.support.annotation.LayoutRes
 import android.view.LayoutInflater
@@ -22,6 +24,15 @@ abstract class BaseFragment : Fragment() {
      */
     private var hasLoadData = false
 
+    lateinit var mContext: Context
+    lateinit var mActivity: Activity
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        mActivity = context as Activity
+        mContext = context
+    }
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return inflater!!.inflate(getLayoutId(), null)
     }
@@ -29,7 +40,8 @@ abstract class BaseFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         isViewPrepare = true
-        initView()
+        initView(view, savedInstanceState)
+//        initData()
         lazyLoadDataIfPrepared()
     }
 
@@ -60,7 +72,14 @@ abstract class BaseFragment : Fragment() {
     /**
      * 初始化 View
      */
-    abstract fun initView()
+    open fun initView(view: View?, savedInstanceState: Bundle?) {
+
+    }
+
+    /**
+     * 初始化数据
+     */
+//    abstract fun initData()
 
     /**
      * 懒加载

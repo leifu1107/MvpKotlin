@@ -11,6 +11,7 @@
     <!-- 访问网络 -->
     <uses-permission android:name="android.permission.INTERNET"/>
     <!-- 读取手机状态 -->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.READ_LOGS"/>
     <!-- SD 卡读写权限 -->
