@@ -22,13 +22,13 @@ class ObservablePresenter : BaseRxPresenter<ObservableContract.View>(), Observab
         mView?.showLoading()
         addSubscription(
             RetrofitManager.apiService.getObjectData()
-                .compose(RxManage.rxSchedulerObservableHelper())
+                .compose(RxManage.rxSchedulerObservableHelper<ObjectBean>())
                 .compose(RxManage.handleObservableResult<ObjectBean>())
                 .subscribe({
                     run { ->
                         val b = it is ObjectBean
                         val c = it is BaseBean
-                        Log.e("ok", it.appId + it.code + b + c)
+                        Log.e("ok", it.data.appId + it.code + b + c)
                         mView?.showObjectData(it)
                         mView?.dismissLoading()
                     }

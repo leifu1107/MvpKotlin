@@ -7,7 +7,6 @@ import com.leifu.mvpkotlin.net.BaseBean
  *创建时间:2019/6/11 18:47
  *描述:
  */
-data class ObjectBean(
-    val appId: String,
-    val appkey: String
-) : BaseBean() {}
+data class ObjectBean(val data: Data) : BaseBean() {
+    data class Data(val appId: String, val appkey: String)
+}

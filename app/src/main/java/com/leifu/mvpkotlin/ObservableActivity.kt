@@ -24,6 +24,6 @@ class ObservableActivity : BaseMvpActivity<ObservableContract.View, ObservablePr
     }
 
     override fun showObjectData(objectBean: ObjectBean) {
-        textView.text = objectBean.toString() + objectBean.msg
+        textView.text = objectBean.toString()+objectBean.code+objectBean.msg
     }
 }
