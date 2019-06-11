@@ -50,7 +50,7 @@ object RxManage {
         return ObservableTransformer { observable ->
             observable.flatMap(Function<T, Observable<T>> { bean ->
                 val baseBean = bean as BaseBean
-                if (baseBean.code == 1) {
+                if (baseBean.code == 200) {//{"code":200,"msg":"成功!","data":{"appId":"com.chat.peakchao","appkey":"00d91e8e0cca2b76f515926a36db68f5"}}
                     createObservable(bean)
                 } else {
                     Observable.error(ApiException(baseBean.msg))

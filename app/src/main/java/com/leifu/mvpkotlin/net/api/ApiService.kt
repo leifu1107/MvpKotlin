@@ -1,5 +1,6 @@
 package com.leifu.mvpkotlin.net.api
 
+import com.leifu.mvpkotlin.bean.ObjectBean
 import com.leifu.mvpkotlin.net.BaseBean
 import io.reactivex.Observable
 import retrofit2.http.GET
@@ -10,9 +11,17 @@ import retrofit2.http.GET
  *描述:
  */
 interface ApiService {
+    // https://www.apiopen.top/femaleNameApi?page=1
+    //https://www.apiopen.top/createUserKey?appId=com.chat.peakchao&passwd=123456
     /**
-     * 首页精选
+     * 创建应用接口
      */
-    @GET("api/4/news/latest")
-    fun getFirstHomeData(): Observable<BaseBean>
+    @GET("createUserKey?appId=com.chat.peakchao&passwd=123456")
+    fun getObjectData(): Observable<ObjectBean>
+
+    /**
+     * 创建应用接口
+     */
+    @GET("createUserKey?appId=com.chat.peakchao&passwd=123456")
+    fun getListData(): Observable<BaseBean>
 }

@@ -10,6 +10,26 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
 
+    <!-- Http 等待Dialog -->
+    <style name="loadingDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/custom_loading_bg</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>  <!-- 半透明 -->
+    </style>
+    <style name="loadingDialogProgressBar">
+        <item name="android:indeterminateOnly">true</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:indeterminateDuration">1000</item>
+        <item name="android:minWidth">34dp</item>
+        <item name="android:maxWidth">34dp</item>
+        <item name="android:minHeight">34dp</item>
+        <item name="android:maxHeight">34dp</item>
     </style>
 </resources>

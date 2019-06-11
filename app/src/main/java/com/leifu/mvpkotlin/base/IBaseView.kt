@@ -7,8 +7,18 @@ package com.leifu.mvpkotlin.base
  */
 interface IBaseView {
 
+    /**
+     * 加载中
+     */
     fun showLoading()
 
+    /**
+     * 取消加载中
+     */
     fun dismissLoading()
 
+    /**
+     * 显示错误提示
+     */
+    fun showErrorMsg(msg: String)
 }

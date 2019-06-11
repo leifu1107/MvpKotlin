@@ -5,6 +5,6 @@ package com.leifu.mvpkotlin.net.api
  */
 object UrlConstant {
 
-    const val BASE_URL = "https://news-at.zhihu.com/"
+    const val BASE_URL = "https://www.apiopen.top/"
 
 }

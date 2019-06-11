@@ -2,6 +2,8 @@ package com.leifu.mvpkotlin.base
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import com.leifu.mvpkotlin.view.LoadingUtil
 
 /**
  *创建人:雷富
@@ -34,13 +36,21 @@ abstract class BaseMvpFragment<in V : IBaseView, P : IBasePresenter<V>> : BaseFr
      * 加载中
      */
     override fun showLoading() {
-
+        LoadingUtil.showLoading(mActivity, "加载中...")
     }
 
     /**
      * 取消加载
      */
     override fun dismissLoading() {
+        LoadingUtil.dismissLoading()
+    }
+
+    /**
+     * 显示错误提示
+     */
+    override fun showErrorMsg(msg: String) {
+        Toast.makeText(mContext, msg, Toast.LENGTH_LONG).show()
     }
 
     /**
