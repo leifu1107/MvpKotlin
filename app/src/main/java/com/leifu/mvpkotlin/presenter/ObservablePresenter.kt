@@ -21,8 +21,8 @@ class ObservablePresenter : BaseRxPresenter<ObservableContract.View>(), Observab
         Log.e("okhttp", "getCategoryData")
         mView?.showLoading()
         addSubscription(
-            RetrofitManager.apiService.getObjectData()
-                .compose(RxManage.rxSchedulerObservableHelper<ObjectBean>())
+            RetrofitManager.apiService.getObservableObjectData()
+                .compose(RxManage.rxSchedulerObservableHelper())
                 .compose(RxManage.handleObservableResult<ObjectBean>())
                 .subscribe({
                     run { ->

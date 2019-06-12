@@ -1,7 +1,10 @@
 package com.leifu.mvpkotlin.net.api
 
 import com.leifu.mvpkotlin.bean.ObjectBean
+import com.leifu.mvpkotlin.bean.TBean
 import com.leifu.mvpkotlin.net.BaseBean
+import com.leifu.mvpkotlin.net.BaseResponseBean
+import io.reactivex.Flowable
 import io.reactivex.Observable
 import retrofit2.http.GET
 
@@ -17,7 +20,20 @@ interface ApiService {
      * 创建应用接口
      */
     @GET("createUserKey?appId=com.chat.peakchao&passwd=123456")
-    fun getObjectData(): Observable<ObjectBean>
+    fun getObservableObjectData(): Observable<ObjectBean>
+
+    /**
+     * 创建应用接口
+     */
+    @GET("createUserKey?appId=com.chat.peakchao&passwd=123456")
+    fun getFlowableObjectData(): Flowable<ObjectBean>
+
+    /**
+     * 创建应用接口
+     */
+    @GET("createUserKey?appId=com.chat.peakchao&passwd=123456")
+    fun getTData(): Flowable<BaseResponseBean<TBean>>
+
 
     /**
      * 创建应用接口

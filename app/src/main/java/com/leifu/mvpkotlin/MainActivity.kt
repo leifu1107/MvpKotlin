@@ -10,7 +10,7 @@ class MainActivity : BaseActivity() {
 
     override fun initData() {
         btnObservable.setOnClickListener { startActivity(Intent(mContext, ObservableActivity::class.java)) }
+        btnFlowable.setOnClickListener { startActivity(Intent(mContext, FlowableActivity::class.java)) }
+        btnT.setOnClickListener { startActivity(Intent(mContext, TActivity::class.java)) }
     }
-
-
 }

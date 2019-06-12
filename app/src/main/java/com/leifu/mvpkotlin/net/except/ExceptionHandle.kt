@@ -41,6 +41,7 @@ class ExceptionHandle {
                 Log.e("TAG", "未知错误Debug调试: " + e.message)
                 errorMsg = "未知错误，可能抛锚了吧~"
             }
+            Log.e("TAG", "错误调试: " + e.message)
 //            Toast.makeText(MyApp.context, errorMsg, Toast.LENGTH_LONG).show()
             mView.showErrorMsg(errorMsg)
             return errorMsg

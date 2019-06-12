@@ -68,7 +68,7 @@ object RxManage {
         return FlowableTransformer { flowable ->
             flowable.flatMap(Function<T, Flowable<T>> { bean ->
                 val baseBean = bean as BaseBean
-                if (baseBean.code == 1) {
+                if (baseBean.code == 200) {
                     createFlowable(bean)
                 } else {
                     Flowable.error(ApiException(baseBean.msg))
@@ -78,7 +78,24 @@ object RxManage {
     }
 
     /**
-     * 生成Flowable,支持背压
+     *不通过继承,通过泛型实现实体类
+     * @param <T>
+     * @return
+    </T> */
+    fun <T> handleFlowableResult2(): FlowableTransformer<BaseResponseBean<T>, T> {
+        return FlowableTransformer { flowable ->
+            flowable.flatMap { bean ->
+                if (bean.code == 200) {
+                    createFlowable(bean.data)
+                } else {
+                    Flowable.error(ApiException(bean.msg))
+                }
+            }
+        }
+    }
+
+    /**
+     * 生成Observable,不支持背压
      * @param <T>
      * @return
     </T> */

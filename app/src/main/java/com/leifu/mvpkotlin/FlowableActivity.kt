@@ -2,11 +2,11 @@ package com.leifu.mvpkotlin
 
 import com.leifu.mvpkotlin.base.BaseMvpActivity
 import com.leifu.mvpkotlin.bean.ObjectBean
-import com.leifu.mvpkotlin.presenter.ObservablePresenter
-import com.leifu.mvpkotlin.presenter.contract.ObservableContract
+import com.leifu.mvpkotlin.presenter.FlowablePresenter
+import com.leifu.mvpkotlin.presenter.contract.FlowableContract
 import kotlinx.android.synthetic.main.activity_observable.*
 
-class ObservableActivity : BaseMvpActivity<ObservableContract.View, ObservablePresenter>(), ObservableContract.View {
+class FlowableActivity : BaseMvpActivity<FlowableContract.View, FlowablePresenter>(), FlowableContract.View {
 
 
     override fun getLayoutId(): Int = R.layout.activity_observable
@@ -19,8 +19,8 @@ class ObservableActivity : BaseMvpActivity<ObservableContract.View, ObservablePr
         mPresenter?.getObjectData()
     }
 
-    override fun createPresenter(): ObservablePresenter {
-        return ObservablePresenter()
+    override fun createPresenter(): FlowablePresenter {
+        return FlowablePresenter()
     }
 
     override fun showObjectData(objectBean: ObjectBean) {

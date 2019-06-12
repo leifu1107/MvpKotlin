@@ -18,11 +18,11 @@ abstract class FlowableSubscriberManager<T> : ResourceSubscriber<T> {
      */
     private var isShowLoading = true
 
-    constructor(mView: IBaseView) {
+    constructor(mView: IBaseView?) {
         this.mView = mView
     }
 
-    constructor(mView: IBaseView, isShowLoading: Boolean) {
+    constructor(mView: IBaseView?, isShowLoading: Boolean) {
         this.mView = mView
         this.isShowLoading = isShowLoading
     }
