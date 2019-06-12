@@ -2,8 +2,8 @@ package com.leifu.mvpkotlin.net.api
 
 import com.leifu.mvpkotlin.bean.ObjectBean
 import com.leifu.mvpkotlin.bean.TBean
-import com.leifu.mvpkotlin.net.BaseBean
-import com.leifu.mvpkotlin.net.BaseResponseBean
+import com.leifu.mvpkotlin.net.response.BaseBean
+import com.leifu.mvpkotlin.net.response.BaseResponseBean
 import io.reactivex.Flowable
 import io.reactivex.Observable
 import retrofit2.http.GET

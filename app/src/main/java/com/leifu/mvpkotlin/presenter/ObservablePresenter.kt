@@ -3,9 +3,9 @@ package com.leifu.mvpkotlin.presenter
 import android.util.Log
 import com.leifu.mvpkotlin.base.BaseRxPresenter
 import com.leifu.mvpkotlin.bean.ObjectBean
-import com.leifu.mvpkotlin.net.BaseBean
-import com.leifu.mvpkotlin.net.RetrofitManager
-import com.leifu.mvpkotlin.net.RxManage
+import com.leifu.mvpkotlin.net.response.BaseBean
+import com.leifu.mvpkotlin.net.rx.RetrofitManager
+import com.leifu.mvpkotlin.net.rx.RxManage
 import com.leifu.mvpkotlin.net.except.ExceptionHandle
 import com.leifu.mvpkotlin.presenter.contract.ObservableContract
 

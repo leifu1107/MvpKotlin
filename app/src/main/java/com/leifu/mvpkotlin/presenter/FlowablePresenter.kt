@@ -2,9 +2,9 @@ package com.leifu.mvpkotlin.presenter
 
 import com.leifu.mvpkotlin.base.BaseRxPresenter
 import com.leifu.mvpkotlin.bean.ObjectBean
-import com.leifu.mvpkotlin.net.FlowableSubscriberManager
-import com.leifu.mvpkotlin.net.RetrofitManager
-import com.leifu.mvpkotlin.net.RxManage
+import com.leifu.mvpkotlin.net.rx.FlowableSubscriberManager
+import com.leifu.mvpkotlin.net.rx.RetrofitManager
+import com.leifu.mvpkotlin.net.rx.RxManage
 import com.leifu.mvpkotlin.presenter.contract.FlowableContract
 
 /**

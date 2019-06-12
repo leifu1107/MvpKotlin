@@ -1,7 +1,9 @@
-package com.leifu.mvpkotlin.net
+package com.leifu.mvpkotlin.net.rx
 
 
 import com.leifu.mvpkotlin.net.except.ApiException
+import com.leifu.mvpkotlin.net.response.BaseBean
+import com.leifu.mvpkotlin.net.response.BaseResponseBean
 import io.reactivex.*
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.functions.Function

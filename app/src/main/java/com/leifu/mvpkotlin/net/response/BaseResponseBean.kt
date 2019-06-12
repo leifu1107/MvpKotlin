@@ -1,4 +1,4 @@
-package com.leifu.mvpkotlin.net
+package com.leifu.mvpkotlin.net.response
 
 /**
  * 封装返回的数据

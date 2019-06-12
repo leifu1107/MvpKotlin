@@ -1,6 +1,6 @@
 package com.leifu.mvpkotlin.bean
 
-import com.leifu.mvpkotlin.net.BaseBean
+import com.leifu.mvpkotlin.net.response.BaseBean
 
 /**
  *创建人:雷富

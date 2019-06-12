@@ -1,4 +1,4 @@
-package com.leifu.mvpkotlin.net
+package com.leifu.mvpkotlin.net.response
 
 import java.io.Serializable
 

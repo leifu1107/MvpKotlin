@@ -1,4 +1,4 @@
-package com.leifu.mvpkotlin.net
+package com.leifu.mvpkotlin.net.rx
 
 import android.util.Log
 import com.leifu.mvpkotlin.app.MyApp
