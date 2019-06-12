@@ -1,12 +1,10 @@
 package com.leifu.mvpkotlin.presenter
 
-import android.util.Log
 import com.leifu.mvpkotlin.base.BaseRxPresenter
 import com.leifu.mvpkotlin.bean.ObjectBean
-import com.leifu.mvpkotlin.net.response.BaseBean
+import com.leifu.mvpkotlin.net.except.ExceptionHandle
 import com.leifu.mvpkotlin.net.rx.RetrofitManager
 import com.leifu.mvpkotlin.net.rx.RxManage
-import com.leifu.mvpkotlin.net.except.ExceptionHandle
 import com.leifu.mvpkotlin.presenter.contract.ObservableContract
 
 /**
@@ -18,7 +16,6 @@ class ObservablePresenter : BaseRxPresenter<ObservableContract.View>(), Observab
 
 
     override fun getObjectData() {
-        Log.e("okhttp", "getCategoryData")
         mView?.showLoading()
         addSubscription(
             RetrofitManager.apiService.getObservableObjectData()
@@ -26,9 +23,6 @@ class ObservablePresenter : BaseRxPresenter<ObservableContract.View>(), Observab
                 .compose(RxManage.handleObservableResult<ObjectBean>())
                 .subscribe({
                     run { ->
-                        val b = it is ObjectBean
-                        val c = it is BaseBean
-                        Log.e("ok", it.data.appId + it.code + b + c)
                         mView?.showObjectData(it)
                         mView?.dismissLoading()
                     }
