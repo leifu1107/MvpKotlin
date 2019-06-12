@@ -3,7 +3,7 @@ package com.leifu.mvpkotlin.util
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
-import com.leifu.mvpkotlin.MyApp
+import com.leifu.mvpkotlin.app.MyApp
 import java.io.*
 import kotlin.reflect.KProperty
 

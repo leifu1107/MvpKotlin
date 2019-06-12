@@ -7,7 +7,7 @@ import android.content.Intent
 import android.net.ConnectivityManager
 import android.telephony.TelephonyManager
 import android.text.TextUtils
-import com.leifu.mvpkotlin.MyApp
+import com.leifu.mvpkotlin.app.MyApp
 
 
 class NetworkUtil {

@@ -1,5 +1,6 @@
-package com.leifu.mvpkotlin
+package com.leifu.mvpkotlin.ui
 
+import com.leifu.mvpkotlin.R
 import com.leifu.mvpkotlin.base.BaseMvpActivity
 import com.leifu.mvpkotlin.bean.TBean
 import com.leifu.mvpkotlin.presenter.TPresenter

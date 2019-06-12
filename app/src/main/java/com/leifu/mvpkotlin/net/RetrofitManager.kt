@@ -1,7 +1,7 @@
 package com.leifu.mvpkotlin.net
 
 import android.util.Log
-import com.leifu.mvpkotlin.MyApp
+import com.leifu.mvpkotlin.app.MyApp
 import com.leifu.mvpkotlin.net.api.ApiService
 import com.leifu.mvpkotlin.net.api.UrlConstant
 import com.leifu.mvpkotlin.util.NetworkUtil

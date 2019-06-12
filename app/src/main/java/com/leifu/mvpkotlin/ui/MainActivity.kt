@@ -1,6 +1,7 @@
-package com.leifu.mvpkotlin
+package com.leifu.mvpkotlin.ui
 
 import android.content.Intent
+import com.leifu.mvpkotlin.R
 import com.leifu.mvpkotlin.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
