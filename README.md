@@ -5,9 +5,9 @@
 
 ![](https://github.com/leifu1107/MvpKotlin/raw/master/art/1.jpg) 
 ![](https://github.com/leifu1107/MvpKotlin/raw/master/art/2.jpg) 
-        ```java
-//可根据实际情况增加一些方法
-interface IBaseView {
+
+```java
+interface IBaseView {//可根据实际情况增加一些方法
 
     /**
      * 加载中
@@ -24,7 +24,8 @@ interface IBaseView {
      */
     fun showErrorMsg(msg: String)
 }
-        ```
+```
+
 ```java
 interface IBasePresenter<in V : IBaseView> {
 
