@@ -23,8 +23,8 @@ class FlowablePresenter : BaseRxPresenter<FlowableContract.View>(), FlowableCont
                 .compose(RxManage.handleFlowableResult<ObjectBean>())
                 .subscribeWith(
                     object : FlowableSubscriberManager<ObjectBean>(mView, true) {
-                        override fun onNext(bean: ObjectBean) {
-                            this@FlowablePresenter.mView?.showObjectData(bean)
+                        override fun onNext(t: ObjectBean) {
+                            this@FlowablePresenter.mView?.showObjectData(t)
                         }
                     })
 //                .subscribe({

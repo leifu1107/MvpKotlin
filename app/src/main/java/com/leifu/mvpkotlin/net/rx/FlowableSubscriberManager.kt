@@ -27,11 +27,16 @@ abstract class FlowableSubscriberManager<T> : ResourceSubscriber<T> {
         this.isShowLoading = isShowLoading
     }
 
+
     override fun onStart() {
         super.onStart()
         if (isShowLoading) {
             mView?.showLoading()
         }
+    }
+
+    override fun onNext(t: T) {
+        mView?.showContent()
     }
 
     override fun onComplete() {
@@ -44,9 +49,6 @@ abstract class FlowableSubscriberManager<T> : ResourceSubscriber<T> {
         if (isShowLoading) {
             mView?.dismissLoading()
         }
-        if (mView == null) {
-            return
-        }
-        ExceptionHandle.handleException(e, mView!!)
+        ExceptionHandle.handleException(e, mView)
     }
 }

@@ -13,6 +13,7 @@ class FlowableActivity : BaseMvpActivity<FlowableContract.View, FlowablePresente
     override fun getLayoutId(): Int = R.layout.activity_observable
 
     override fun initData() {
+//        mLayoutStatusView = multipleStatusView
         startNetwork()
     }
 

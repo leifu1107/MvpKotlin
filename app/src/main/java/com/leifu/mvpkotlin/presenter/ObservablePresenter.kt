@@ -16,7 +16,7 @@ class ObservablePresenter : BaseRxPresenter<ObservableContract.View>(), Observab
 
 
     override fun getObjectData() {
-        mView?.showLoading()
+//        mView?.showLoading()
         addSubscription(
             RetrofitManager.apiService.getObservableObjectData()
                 .compose(RxManage.rxSchedulerObservableHelper())

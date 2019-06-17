@@ -13,6 +13,21 @@ interface IBaseView {
     fun showLoading()
 
     /**
+     * 无网络
+     */
+    fun showNoNetwork()
+
+    /**
+     * 显示错误视图
+     */
+    fun showError()
+
+    /**
+     * 显示内容视图
+     */
+    fun showContent()
+
+    /**
      * 取消加载中
      */
     fun dismissLoading()

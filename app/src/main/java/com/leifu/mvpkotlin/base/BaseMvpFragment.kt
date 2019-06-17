@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.leifu.mvpkotlin.view.LoadingUtil
+import com.leifu.mvpkotlin.view.MultipleStatusView
 
 /**
  *创建人:雷富
@@ -14,13 +15,15 @@ abstract class BaseMvpFragment<in V : IBaseView, P : IBasePresenter<V>> : BaseFr
 
     var mPresenter: P? = null
 
+    /**
+     * 多种状态的 View 的切换
+     */
+    var mLayoutStatusView: MultipleStatusView? = null
 
     override fun initView(view: View?, savedInstanceState: Bundle?) {
         super.initView(view, savedInstanceState)
         mPresenter = createPresenter()
-        if (mPresenter != null) {
-            mPresenter!!.attachView(this as V)
-        }
+        mPresenter?.attachView(this as V)
     }
 
     /**
@@ -31,12 +34,11 @@ abstract class BaseMvpFragment<in V : IBaseView, P : IBasePresenter<V>> : BaseFr
         mPresenter?.detachView()
     }
 
-
     /**
      * 加载中
      */
     override fun showLoading() {
-        LoadingUtil.showLoading(mActivity, "加载中...")
+        mLayoutStatusView?.showLoading() ?: LoadingUtil.showLoading(mActivity, "加载中...")
     }
 
     /**
@@ -45,6 +47,29 @@ abstract class BaseMvpFragment<in V : IBaseView, P : IBasePresenter<V>> : BaseFr
     override fun dismissLoading() {
         LoadingUtil.dismissLoading()
     }
+
+
+    /**
+     * 无网络
+     */
+    override fun showNoNetwork() {
+        mLayoutStatusView?.showNoNetwork()
+    }
+
+    /**
+     * 显示内容视图
+     */
+    override fun showContent() {
+        mLayoutStatusView?.showContent()
+    }
+
+    /**
+     * 显示错误视图
+     */
+    override fun showError() {
+        mLayoutStatusView?.showError()
+    }
+
 
     /**
      * 显示错误提示

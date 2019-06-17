@@ -23,8 +23,8 @@ class TPresenter : BaseRxPresenter<TContract.View>(), TContract.Presenter {
                 .compose(RxManage.handleFlowableResult2())//通过泛型处理
                 .subscribeWith(
                     object : FlowableSubscriberManager<TBean>(mView, true) {
-                        override fun onNext(bean: TBean) {
-                            this@TPresenter.mView?.showObjectData(bean)
+                        override fun onNext(t: TBean) {
+                            this@TPresenter.mView?.showObjectData(t)
                         }
                     })
         )

@@ -23,6 +23,7 @@ abstract class BaseActivity : AppCompatActivity() {
         setContentView(getLayoutId())
         initView(savedInstanceState)
         initData()
+        initListener()
     }
 
     /**
@@ -34,18 +35,21 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     /**
+     *  加载布局
+     */
+    abstract fun getLayoutId(): Int
+
+    /**
      *  initView
      */
     open fun initView(savedInstanceState: Bundle?) {
     }
 
     /**
-     *  加载布局
-     */
-    abstract fun getLayoutId(): Int
-
-    /**
      * 初始化数据
      */
     abstract fun initData()
+
+    open fun initListener() {
+    }
 }
