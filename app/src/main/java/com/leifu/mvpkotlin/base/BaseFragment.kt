@@ -42,7 +42,7 @@ abstract class BaseFragment : Fragment() {
         isViewPrepare = true
         initView(view, savedInstanceState)
 //        initData()
-        lazyLoadDataIfPrepared()
+        lazyLoadDataPrepared()
     }
 
     override fun onHiddenChanged(hidden: Boolean) {//单个fragment
@@ -52,11 +52,11 @@ abstract class BaseFragment : Fragment() {
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {//结合viewpager
         super.setUserVisibleHint(isVisibleToUser)
         if (isVisibleToUser) {
-            lazyLoadDataIfPrepared()
+            lazyLoadDataPrepared()
         }
     }
 
-    fun lazyLoadDataIfPrepared() {
+    fun lazyLoadDataPrepared() {
         if (userVisibleHint && isViewPrepare && !hasLoadData) {
             lazyLoad()
             hasLoadData = true

@@ -18,7 +18,7 @@ open class BaseRxPresenter<V : IBaseView> : IBasePresenter<V> {
         if (compositeDisposable == null) {
             compositeDisposable = CompositeDisposable()
         }
-        compositeDisposable!!.add(disposable)
+        compositeDisposable?.add(disposable)
     }
 
     override fun attachView(view: V) {
@@ -27,7 +27,6 @@ open class BaseRxPresenter<V : IBaseView> : IBasePresenter<V> {
 
     override fun detachView() {
         mView = null
-
         if (!compositeDisposable!!.isDisposed) {
             compositeDisposable!!.clear()
         }
