@@ -1,10 +1,10 @@
 package com.leifu.mvpkotlin.base
 
 import android.app.Activity
-import android.app.Fragment
 import android.content.Context
 import android.os.Bundle
 import android.support.annotation.LayoutRes
+import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,11 +33,11 @@ abstract class BaseFragment : Fragment() {
         mContext = context
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return inflater!!.inflate(getLayoutId(), null)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(getLayoutId(), null)
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         isViewPrepare = true
         initView(view, savedInstanceState)

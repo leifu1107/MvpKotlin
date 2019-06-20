@@ -27,8 +27,10 @@ open class BaseRxPresenter<V : IBaseView> : IBasePresenter<V> {
 
     override fun detachView() {
         mView = null
-        if (!compositeDisposable!!.isDisposed) {
-            compositeDisposable!!.clear()
+        compositeDisposable?.run {
+            if (!isDisposed) {
+                clear()
+            }
         }
     }
 }
