@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          android:id="@+id/tv_toast_msg"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="#bc5ec2"
+          android:gravity="center"
+          android:padding="20dp"
+          android:textColor="#ffffff"
+          tools:text="密码格式不正确,\n长度为6-16位字母和数字组合"/>

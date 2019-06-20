@@ -55,7 +55,7 @@ object RxManage {
                 if (baseBean.code == 200) {//{"code":200,"msg":"成功!","data":{"appId":"com.chat.peakchao","appkey":"00d91e8e0cca2b76f515926a36db68f5"}}
                     createObservable(bean)
                 } else {
-                    Observable.error(ApiException(baseBean.msg))
+                    Observable.error(ApiException(baseBean.code,baseBean.msg))
                 }
             })
         }
@@ -73,7 +73,7 @@ object RxManage {
                 if (baseBean.code == 200) {
                     createFlowable(bean)
                 } else {
-                    Flowable.error(ApiException(baseBean.msg))
+                    Flowable.error(ApiException(baseBean.code,baseBean.msg))
                 }
             })
         }
@@ -90,7 +90,7 @@ object RxManage {
                 if (bean.code == 200) {
                     createFlowable(bean.data)
                 } else {
-                    Flowable.error(ApiException(bean.msg))
+                    Flowable.error(ApiException(bean.code,bean.msg))
                 }
             }
         }
