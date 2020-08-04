@@ -6,7 +6,7 @@
 ![](https://github.com/leifu1107/MvpKotlin/raw/master/art/1.jpg) 
 ![](https://github.com/leifu1107/MvpKotlin/raw/master/art/2.jpg) 
 
-```java
+```:
 interface IBaseView {//可根据实际情况增加一些方法
 
     /**
@@ -25,8 +25,9 @@ interface IBaseView {//可根据实际情况增加一些方法
     fun showErrorMsg(msg: String)
 }
 ```
+---
 
-```java
+```:java
 interface IBasePresenter<in V : IBaseView> {
 
     fun attachView(view: V)
@@ -34,6 +35,8 @@ interface IBasePresenter<in V : IBaseView> {
     fun detachView()
 }
 ```
+---
+
 ```java
 open class BaseRxPresenter<V : IBaseView> : IBasePresenter<V> {
     var mView: V? = null
@@ -60,6 +63,7 @@ open class BaseRxPresenter<V : IBaseView> : IBasePresenter<V> {
     }
 }
 ```
+---
 
 ```java
 
@@ -121,7 +125,7 @@ abstract class BaseMvpActivity<in V : IBaseView, P : IBasePresenter<V>> : BaseAc
     abstract fun createPresenter(): P
 }
 ```
-
+---
 
 ```java
 
@@ -234,7 +238,7 @@ object RetrofitManager {
 }
 
 ```
-
+---
 
 ```java
 
@@ -359,6 +363,7 @@ object RxManage {
 }
 
 ```
+---
 
 ```java
 package com.leifu.mvpkotlin.net.except
